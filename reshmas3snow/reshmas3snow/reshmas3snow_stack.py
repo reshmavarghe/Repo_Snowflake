@@ -4,7 +4,7 @@ from aws_cdk import (
     Stack,
     aws_s3 as s3,
     aws_iam as iam,
-    aws_lambda as lambda,
+    aws_lambda as lambda_,
 )
 from constructs import Construct
 

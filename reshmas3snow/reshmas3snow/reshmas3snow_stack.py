@@ -29,7 +29,7 @@ class Reshmas3SnowStack(Stack):
             )
         )
         role = iam.Role(self, "RVRole",
-            assumed_by = iam.ServicePrincipal("s3.amazonaws.com"),
+            assumed_by = iam.ServicePrincipal("lambda.amazonaws.com"),
             description="Example role for s3"
         )
         role.add_to_policy(iam.PolicyStatement(
@@ -40,5 +40,5 @@ class Reshmas3SnowStack(Stack):
                 runtime=lambda_.Runtime.PYTHON_3_9,
                 handler="index.handler",
                 code=lambda_.Code.from_asset("lambda"),
-                #role=role
+                role=role
                 )

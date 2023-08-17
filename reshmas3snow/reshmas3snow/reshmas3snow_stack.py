@@ -33,5 +33,5 @@ class Reshmas3SnowStack(Stack):
         )
         role.add_to_policy(iam.PolicyStatement(
         resources=["*"],
-        actions=["lambda:InvokeFunction"]
+        actions=["lambda:*"]
 ))

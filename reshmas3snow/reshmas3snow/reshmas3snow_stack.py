@@ -27,3 +27,11 @@ class Reshmas3SnowStack(Stack):
             principals=[iam.AccountRootPrincipal()]
             )
         )
+        role = iam.Role(self, "RVRole",
+            assumed_by = iam.ServicePrincipal("s3.amazonaws.com"),
+            description="Example role for s3"
+        )
+        role.add_to_policy(iam.PolicyStatement(
+        resources=["*"],
+        actions=["lambda:InvokeFunction"]
+))

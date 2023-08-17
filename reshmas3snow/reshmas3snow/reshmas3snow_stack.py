@@ -4,6 +4,7 @@ from aws_cdk import (
     Stack,
     aws_s3 as s3,
     aws_iam as iam,
+    aws_lambda as lambda,
 )
 from constructs import Construct
 
@@ -34,4 +35,10 @@ class Reshmas3SnowStack(Stack):
         role.add_to_policy(iam.PolicyStatement(
         resources=["*"],
         actions=["lambda:*"]
-))
+        ))
+        fn = lambda_.Function(self, "RVLambdaFunction",
+                runtime=lambda_.Runtime.PYTHON_3_9,
+                handler="index.handler",
+                code=lambda_.Code.from_asset("lambda"),
+                role=role
+                )

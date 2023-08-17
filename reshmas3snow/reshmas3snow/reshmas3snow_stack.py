@@ -19,7 +19,7 @@ class Reshmas3SnowStack(Stack):
             encryption=s3.BucketEncryption.KMS,
             bucket_key_enabled=True
                 )
-        result = bucket.add_to_resource_policy
+        result1 = bucket.add_to_resource_policy
         (
             iam.PolicyStatement(
             actions=["s3:*"],

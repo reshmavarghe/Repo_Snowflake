@@ -21,9 +21,9 @@ class Reshmas3SnowStack(Stack):
                 )
         result=bucket.add_to_resource_policy(
             iam.PolicyStatement(
-                actions=["s3.GetObject","s3.ListObject"],
-                resources=[bucket.arnforobjects("*")],
-                principals=[iam.AccountRootPrincipal()]
+            actions=["s3.GetObject"],
+            resources=[bucket.arn_for_objects("*")],
+            principals=[iam.AccountRootPrincipal()]
             ))
 
             )

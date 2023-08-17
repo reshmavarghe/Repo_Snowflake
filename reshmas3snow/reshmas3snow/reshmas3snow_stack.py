@@ -20,8 +20,8 @@ class Reshmas3SnowStack(Stack):
         # )
         s3.Bucket(
             self,
-            id="reshmasnows3bucket"
-            bucket_name="reshmasnows3bucket"
+            id="reshmasnows3bucket",
+            bucket_name="reshmasnows3bucket",
             encyption=s3.BucketEncyption.KMS,
             bucket_key_enabled=True
                 )

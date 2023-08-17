@@ -3,7 +3,7 @@ from aws_cdk import (
     App,
     Stack,
     aws_s3 as s3,
-    aws_am as iam,
+    aws_iam as iam,
 )
 from constructs import Construct
 
@@ -19,12 +19,11 @@ class Reshmas3SnowStack(Stack):
             encryption=s3.BucketEncryption.KMS,
             bucket_key_enabled=True
                 )
-        result=bucket.add_to_resource_policy(
+        result=bucket.add_to_resource_policy
+        (
             iam.PolicyStatement(
-            actions=["s3.GetObject"],
+            actions=["s3.*"],
             resources=[bucket.arn_for_objects("*")],
             principals=[iam.AccountRootPrincipal()]
-            ))
-
             )
         )

@@ -42,3 +42,8 @@ class Reshmas3SnowStack(Stack):
                 code=lambda_.Code.from_asset("lambda"),
                 role=role
                 )
+                # make lambda get triggered when objects are created in the bucket
+        bucket.add_event_notification(
+            event=s3.EventType.OBJECT_CREATED_PUT,
+            dest=s3n.LambdaDestination(RVLambdaFunction),
+        )

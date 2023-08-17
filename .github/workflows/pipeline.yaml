@@ -60,4 +60,4 @@ jobs:
 
     - name: CDK Deploy
       working-directory: reshmas3snow
-      run: cdk deploy
+      run: cdk deploy --require-approval never

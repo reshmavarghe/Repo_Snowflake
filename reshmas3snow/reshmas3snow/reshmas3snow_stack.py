@@ -40,5 +40,5 @@ class Reshmas3SnowStack(Stack):
                 runtime=lambda_.Runtime.PYTHON_3_9,
                 handler="index.handler",
                 code=lambda_.Code.from_asset("lambda"),
-                role=role
+                #role=role
                 )
